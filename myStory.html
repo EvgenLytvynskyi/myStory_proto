@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+     <title>Title</title> 
+	 <style>
+	 .conteiner{
+	 width:300px;
+	 margin:auto;
+	 }
+ </style>
+</head>
+<body>
+</body>
+	
+	<div class="conteiner">
+	<div class="put_data">
+		<input type="text" class="yearsValue">
+		<input type="button" class="find" value="review">
+	</div>
+	<div class="result"></div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+	
+		
+	$('.find').on('click', function(){
+	$('.result').html(" ");
+	if($('.yearsValue').val()>=0 && $('.yearsValue').val()<=5){
+	myBirth();
+	}else if($('.yearsValue').val()>=6 && $('.yearsValue').val()<=15){
+	myYouth();
+	}
+	});
+	
+	var birth={
+		name:"genyk",
+		city:"Lviv",
+		date:17,
+		month:"september",
+		year:1986,
+		voice:"cry",
+	}
+	
+	var youth={
+	habbits:'smoke'
+	}
+	
+	youth.__proto__=birth;
+	
+	function myBirth (){
+	$('.result').html("My name is " + birth.name + '. The day of my birth is: '+ birth.date+' '+birth.month+' '+birth.year);
+	}
+	function myYouth(){
+	$('.result').html("My name is still " + youth.name + '. The day of my birth is still: '+ youth.date+' '+youth.month+' '+youth.year+'. But now i like to '+youth.habbits);
+	}	
+		
+	</script>
+</html>
